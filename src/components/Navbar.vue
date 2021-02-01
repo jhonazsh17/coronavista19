@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top" >
         <div class="container">
-            <a class="navbar-brand" href="#">CHUSAYWA / <small>Caso: <span style="color:#e67e22">{{caso.title}}</span></small>    </a>
+            <a class="navbar-brand" href="#">CORONAVISTA 19 / <small><span style="color:#e67e22">{{caso.title}}</span></small> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@ export default {
     data () {
         return {
             caso: {
-                title: "COVID-19 detalle."
+                title: "Detalle de Coronavirus por Paises."
             }
         }
     },
