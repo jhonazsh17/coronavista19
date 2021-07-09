@@ -8,7 +8,10 @@
                             <div class="card-body card-body-customize">
                                 <div class="row">
                                     <div class="col-7 col-sm-6 col-md-7">
-                                        <h3 class="title-table">Reporte Diario</h3>
+                                        <h3 class="title-table">
+                                            Reporte Diario
+                                            <country-flag :country='$store.state.alpha_2' size='normal' />
+                                        </h3>
                                     </div> 
                                     <div class="col-5 col-sm-6 col-md-5">
                                         <SelectCountry></SelectCountry>

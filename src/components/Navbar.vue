@@ -1,5 +1,7 @@
 <template>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top" >
+    <nav 
+        class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top" 
+        style="box-shadow: 1px 1px 10px 3px #00000052; background-color: #34495e !important; border-bottom: 1px solid #768491;">
         <div class="container">
             <a class="navbar-brand" href="#">CORONAVISTA 19 / <small><span style="color:#e67e22">{{caso.title}}</span></small> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
