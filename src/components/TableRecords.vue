@@ -1,13 +1,14 @@
 <template>
-    <div>
+    <div >
         <p class="text-justify">
             <small>
                 Al elegir una Fecha en esta tabla, la información cambia de acuerdo a la fecha seleccionada.
             </small>        
         </p>   
-        <table class="table table-bordered table-hover ">
+        <table 
+            class="table table-bordered table-hover" >
             <thead>
-                <tr class="text-center">
+                <tr class="text-center" style="background: #7f8c8d;">
                     <th>Fecha</th>
                     <th>Contagiados</th>
                     <th>Recuperados</th>
@@ -15,8 +16,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(record, index) in $store.state.recordsFind" class="text-center" :key="index">
-                    <td><a href="#" @click="onClickDate(record.date)" class="record-date">{{record.date}}</a></td>
+                <tr v-if="$store.state.recordsFind == []">
+                    <td>Cargando ...</td>
+                </tr>
+                <tr 
+                    v-else
+                    v-for="(record, index) in $store.state.recordsFind" 
+                    class="text-center" 
+                    :key="index">
+                    <td>
+                        <a 
+                            href="#" 
+                            @click="onClickDate(record.date)" 
+                            class="record-date">
+                            {{record.date}}
+                        </a>
+                    </td>
                     <td><span style="color:#f1c40f">{{record.confirmed}}</span></td>
                     <td><span style="color:#2ecc71">{{record.recovered}}</span></td>
                     <td><span style="color:#95a5a6">{{record.deaths}}</span></td>

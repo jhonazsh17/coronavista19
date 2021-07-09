@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body card-body-customize">
             <h4>
                 {{ $store.state.countryFind }} <country-flag :country='$store.state.alpha_2' size='normal' />
                 <span class="badge badge-warning" style="margin-left: .8em">
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     .card{
         background-color: #7f8c8d;
         color: white;
@@ -84,6 +84,12 @@ export default {
         font-size: 1.1em;
         font-weight: bold;
         color: #f1c40f;
+    }
+
+    .card-body-customize{
+        box-shadow: 0px 0px 13px 1px #313131;
+        border: 1px solid #f1f1f159;
+        border-radius: 6px;
     }
 
     @media (max-width: 420px) {

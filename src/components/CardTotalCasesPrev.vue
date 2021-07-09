@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body card-body-customize">
             <h5>
                 Casos Nuevos de COVID-19
             </h5>
@@ -54,6 +54,11 @@ export default {
         font-size: 1.1em;
         font-weight: bold;
         color: white;
+    }
+    .card-body-customize{
+        box-shadow: 0px 0px 13px 1px #313131;
+        border: 1px solid #f1f1f159;
+        border-radius: 6px;
     }
 
     @media (max-width: 420px) {

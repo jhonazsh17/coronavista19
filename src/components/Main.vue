@@ -5,7 +5,7 @@
                 <div class="col-12 col-sm-12 col-md-7">
                     <div class="element-no-rwd">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body card-body-customize">
                                 <div class="row">
                                     <div class="col-7 col-sm-6 col-md-7">
                                         <h3 class="title-table">Reporte Diario</h3>
@@ -15,10 +15,8 @@
                                     </div>     
                                 </div>
                                 
-                                <hr>
-                                
-                                <TableRecords></TableRecords>
-                                
+                                <hr>                                
+                                <TableRecords></TableRecords>                           
                                 
                             </div>
                             
@@ -30,15 +28,9 @@
                 </div>
                 <div class="col-md-5 col-sm-12 col-12">
                     <div class="element-rwd" style="display:none">
-                        <!-- <InputSearch></InputSearch> -->
                         <SelectCountry></SelectCountry>
                         <br>  
-                    </div>
-
-                    <!-- <div v-if="$store.state.stateNoSearch==false">
-                        
-                    </div> -->
-                    
+                    </div>                    
                     
                     <div class="element-no-rwd">
                         <GroupButtons></GroupButtons>
@@ -57,16 +49,14 @@
                     
                     <div v-if="$store.state.stateNoSearch">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body card-body-customize">
                                 <h5>Tasa de Mortalidad</h5>  
                                 <hr>
                                 <div class="text-justify">
                                     Mueren <span class="badge badge-warning"><b style="font-size:1.3em">
                                     {{ (($store.state.totalCases.deaths / $store.state.totalCases.confirmed)*100).toFixed(2) }}</b></span> 
                                     personas de cada 100 contagiados por COVID-19 en el país de <b style="color:#3498db">{{ $store.state.countryFind }}</b>.
-                                </div>
-                                
-                                <!-- <VisualizationChart ></VisualizationChart> -->
+                                </div>                                
                             </div>
                         </div>    
                         <br>
@@ -74,11 +64,10 @@
                     
                     <div v-if="$store.state.stateNoSearch">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body card-body-customize">
                                 <h5>Curva de Proyección</h5>  
                                 <hr>
                                 <small>Estamos Trabajando en ello.</small>
-                                <!-- <VisualizationChart ></VisualizationChart> -->
                             </div>
                         </div>    
                         
@@ -171,6 +160,12 @@ export default {
 
     .title-table{
         color: #f1c40f;
+    }
+
+    .card-body-customize{
+        box-shadow: 0px 0px 13px 1px #313131;
+        border: 1px solid #f1f1f159;
+        border-radius: 6px;
     }
 
     @media (max-width: 600px) {
