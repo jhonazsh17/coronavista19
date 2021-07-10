@@ -14,19 +14,19 @@
                 <div class="col-4" >
                     <h6 class="text-center title-cases">Contagiados</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.confirmed - $store.state.totalCasesPrev.confirmed }}
+                        {{ $store.state.totalCases.confirmed - $store.state.totalCasesPrev.confirmed | number}}
                     </div>
                 </div>
                 <div class="col-4">
                     <h6 class="text-center title-cases">Recuperados</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.recovered - $store.state.totalCasesPrev.recovered }}
+                        {{ $store.state.totalCases.recovered - $store.state.totalCasesPrev.recovered | number}}
                     </div>
                 </div>
                 <div class="col-4">
                     <h6 class="text-center title-cases">Muertes</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.deaths - $store.state.totalCasesPrev.deaths }}
+                        {{ $store.state.totalCases.deaths - $store.state.totalCasesPrev.deaths | number}}
                     </div>
                 </div>
             </div>

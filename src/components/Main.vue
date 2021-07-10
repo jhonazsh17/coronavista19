@@ -44,6 +44,17 @@
                         <CardTotalCases></CardTotalCases>
                         <br>
                     </div>  
+
+                    <div v-if="$store.state.stateNoSearch">
+                        <div class="card">
+                            <div class="card-body card-body-customize">
+                                <h5>Curva de Contagios</h5>  
+                                <hr>
+                                <VisualizationChart></VisualizationChart>
+                            </div>
+                        </div>    
+                        <br>
+                    </div>
                     
                     <div v-if="$store.state.stateNoSearch">
                         <CardTotalCasesPrev></CardTotalCasesPrev>
@@ -63,18 +74,8 @@
                             </div>
                         </div>    
                         <br>
-                    </div>
+                    </div>                    
                     
-                    <div v-if="$store.state.stateNoSearch">
-                        <div class="card">
-                            <div class="card-body card-body-customize">
-                                <h5>Curva de Proyección</h5>  
-                                <hr>
-                                <small>Estamos Trabajando en ello.</small>
-                            </div>
-                        </div>    
-                        
-                    </div>
                     <div class="element-rwd" style="display:none" v-if="$store.state.stateNoSearch">
                         <br>
                         <div class="card " >
@@ -120,7 +121,7 @@ import CardTotalCases from "@/components/CardTotalCases.vue";
 import CardTotalCasesPrev from "@/components/CardTotalCasesPrev.vue";
 import GroupButtons from "@/components/GroupButtons.vue";
 import CardHorizontal from "@/components/CardHorizontal.vue";
-//import VisualizationChart from "@/components/VisualizationChart.vue";
+import VisualizationChart from "@/components/VisualizationChart.vue";
 
 export default {
     name: "Main",
@@ -132,7 +133,7 @@ export default {
         GroupButtons,
         CardHorizontal,
         // InputSearch
-        //VisualizationChart
+        VisualizationChart
     },
     data () {
         return {

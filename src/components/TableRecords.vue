@@ -5,8 +5,14 @@
                 Al elegir una Fecha en esta tabla, la información cambia de acuerdo a la fecha seleccionada.     
             </p>
             <p>
-                Desde: <span style="color: #f1c40f">{{$store.state.recordsFind[0].date}}</span>
-                Hasta: <span style="color: #f1c40f">{{$store.state.recordsFind[$store.state.recordsFind.length - 1].date}}</span>
+                Desde: 
+                <span style="color: #f1c40f">
+                    {{$store.state.recordsFind[0].date | normalizeDate}}
+                </span>
+                Hasta: 
+                <span style="color: #f1c40f">
+                    {{$store.state.recordsFind[$store.state.recordsFind.length - 1].date | normalizeDate}}
+                </span>
                 <br>
                 Filas: <span style="color: #f1c40f">{{$store.state.recordsFind.length}}</span>
             </p>  
@@ -37,21 +43,21 @@
                             href="#" 
                             @click="onClickDate(record.date)" 
                             class="record-date">
-                            {{record.date}}
+                            {{record.date | normalizeDate }}
                         </a> 
                     </td>
                     <td>
-                        <span style="color:#f1c40f">{{Intl.NumberFormat('en').format(record.confirmed)}}</span>
+                        <span style="color:#f1c40f">{{record.confirmed | number}}</span>
                     </td>
                     <td>
-                        <span style="color:#2ecc71">{{Intl.NumberFormat('en').format(record.recovered)}}</span>
+                        <span style="color:#2ecc71">{{record.recovered | number}}</span>
                     </td>
                     <td>
-                        <span style="color:#95a5a6">{{Intl.NumberFormat('en').format(record.deaths)}}</span>
+                        <span style="color:#95a5a6">{{record.deaths | number}}</span>
                     </td>
                     <td>
                         <span style="color:#95a5a6">
-                            {{Intl.NumberFormat('en').format(record.confirmed - (record.recovered + record.deaths))}}
+                            {{record.confirmed - (record.recovered + record.deaths) | number}}
                         </span>
                     </td>
                 </tr>

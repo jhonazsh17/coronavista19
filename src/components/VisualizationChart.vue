@@ -1,6 +1,6 @@
 <template>
     <div>
-      <button @click="fill()"></button>
+      <button class="btn btn-warning btn-sm" @click="fill()"><b>Recargar</b></button>
       <chart :chart-data="datacollection"></chart>
     </div>
     
@@ -22,9 +22,9 @@
       },
       methods:{
         fill(){
+          this.$store.commit('resetData');
           this.$store.commit('fillData');
           this.datacollection = this.$store.state.datacollection;
-          console.log(this.datacollection);
         }
       }
     };

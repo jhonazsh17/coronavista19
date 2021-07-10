@@ -4,7 +4,7 @@
             <h4>
                 {{ $store.state.countryFind }} <country-flag :country='$store.state.alpha_2' size='normal' />
                 <span class="badge badge-warning" style="margin-left: .8em">
-                    {{ $store.state.totalCases.date }}
+                    {{ $store.state.totalCases.date | normalizeDate }}
                 </span>
             </h4>
             <hr>
@@ -17,19 +17,19 @@
                 <div class="col-md-4 col-4" >
                     <h6 class="text-center title-cases">Contagiados</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.confirmed }}
+                        {{ $store.state.totalCases.confirmed | number}}
                     </div>
                 </div>
                 <div class="col-md-4 col-4">
                     <h6 class="text-center title-cases">Recuperados</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.recovered }}
+                        {{ $store.state.totalCases.recovered | number}}
                     </div>
                 </div>
                 <div class="col-md-4 col-4">
                     <h6 class="text-center title-cases">Muertes</h6>
                     <div class="box-total">
-                        {{ $store.state.totalCases.deaths }}
+                        {{ $store.state.totalCases.deaths | number}}
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-8 col-7 col-sm-8">
                     <div class="box-total-active">
-                        {{ $store.state.totalCases.confirmed - ($store.state.totalCases.recovered + $store.state.totalCases.deaths) }}
+                        {{ $store.state.totalCases.confirmed - ($store.state.totalCases.recovered + $store.state.totalCases.deaths) | number }}
                     </div>
                     
                 </div>

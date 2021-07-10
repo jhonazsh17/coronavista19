@@ -146,6 +146,10 @@ export default new Vuex.Store({
           // }
         ]
       };
+    },
+
+    resetData(state){
+      state.datacollection = null;
     }
   },
   actions: {},
