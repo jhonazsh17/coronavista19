@@ -22,6 +22,7 @@
       },
       methods:{
         fill(){
+          // fill in the chart
           this.$store.commit('resetData');
           this.$store.commit('fillData');
           this.datacollection = this.$store.state.datacollection;
