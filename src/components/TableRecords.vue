@@ -1,21 +1,29 @@
 <template>
     <div >
-        <div>
-            <p class="text-justify">
-                Al elegir una Fecha en esta tabla, la información cambia de acuerdo a la fecha seleccionada.     
-            </p>
-            <p>
-                Desde: 
-                <span style="color: #f1c40f">
-                    {{$store.state.recordsFind[0].date | normalizeDate}}
-                </span>
-                Hasta: 
-                <span style="color: #f1c40f">
-                    {{$store.state.recordsFind[$store.state.recordsFind.length - 1].date | normalizeDate}}
-                </span>
-                <br>
-                Filas: <span style="color: #f1c40f">{{$store.state.recordsFind.length}}</span>
-            </p>  
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-justify">
+                    Al elegir una Fecha en esta tabla, la información cambia de acuerdo a la fecha seleccionada.     
+                </p>
+            </div>            
+            <div class="col-md-8">                
+                <p>
+                    Desde: 
+                    <span style="color: #f1c40f">
+                        <b>{{$store.state.recordsFind[0].date | normalizeDate}}</b>
+                    </span>
+                    <br>
+                    Hasta: 
+                    <span style="color: #f1c40f">
+                        <b>{{$store.state.recordsFind[$store.state.recordsFind.length - 1].date | normalizeDate}}</b>
+                    </span>
+                    <br>
+                    Días <small>(Desde el primer día de contagio)</small>: <span style="color: #f1c40f"><b>{{$store.state.recordsFind.length}}</b></span>
+                </p>
+            </div>
+            <div class="col-md-4 text-right">
+                <country-flag :country='$store.state.alpha_2' size='big' />
+            </div>              
         </div>
          
         <table 

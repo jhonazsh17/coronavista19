@@ -14,7 +14,7 @@ export default new Vuex.Store({
     countries: [],
     recordsFind: [],
     recordsFindPerDate: [],
-    countryFind: "Peru",
+    countryFind: '',
     dateFind:"",
     totalCases: {
       deaths: 0,
@@ -34,7 +34,7 @@ export default new Vuex.Store({
     recoveredRecords: [],
     deathsRecords: [],
     datacollection : {},
-    alpha_2: 'PE',
+    alpha_2: null,
     stateNoSearch: true,
   },
   mutations: {
@@ -48,8 +48,8 @@ export default new Vuex.Store({
       state.totalCasesPrev.deaths = 0;
       state.totalCasesPrev.recovered = 0;
       state.totalCasesPrev.confirmed = 0;
-      state.totalCasesPrev.date = "";
-
+      state.totalCasesPrev.date = ""; 
+      
       state.alpha_2 = getCode(state.countryFind);
 
       axios.get('https://pomber.github.io/covid19/timeseries.json').then((response) => {
@@ -79,6 +79,17 @@ export default new Vuex.Store({
       });
 
     },
+
+    getCountryByGeolocation(state){
+      console.log('entramos');
+      var api_key = '6aa81980f6714aa4a73db046f33683ac';
+      axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${api_key}&fields=country_code2,country_name`)
+        .then(response => {
+          state.countryFind = response.data.country_name;
+          state.alpha_2 = getCode(state.countryFind);
+        });
+    },
+    
 
     loadPerDate(state){
       state.recordsFindPerDate = [];

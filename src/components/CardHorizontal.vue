@@ -1,7 +1,8 @@
 <template>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body card-body-customize">
            <h5>ADVERTENCIA:</h5>
+           <hr>
            <div>
                Los Datos expuestos son tomados de fuentes fidedignas, pero el cambio de la información en tiempo real
                es rápido a raíz de la expansión rápida de este virus y resulta ser que incluso en el momento que estes 
@@ -22,6 +23,11 @@ export default {
     .card{
         background-color: #7f8c8d;
         color: #95a5a6 !important;
+    }
+    .card-body-customize{
+        box-shadow: 0px 0px 13px 1px #313131;
+        border: 1px solid #f1f1f159;
+        border-radius: 6px;
     }
     /* .box-total{
         margin-top: .8em;

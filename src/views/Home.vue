@@ -19,9 +19,10 @@ export default {
     Main,
     Footer
   },
-  mounted(){
-    this.$store.commit("load");
-    this.$store.commit("fillData");
+  async created(){
+    await this.$store.commit('getCountryByGeolocation');
+    await this.$store.commit("load");
+    await this.$store.commit("fillData");
   }
 };
 </script>

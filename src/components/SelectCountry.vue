@@ -1,7 +1,12 @@
 <template>
     <div class="select-country">
         <select class="form-control" v-on:change="changeCountry()" v-model="$store.state.countryFind">
-            <option v-for="(country, index) in $store.state.countries" :key="index" v-bind:value="country">{{country}}</option>
+            <option 
+                v-for="(country, index) in $store.state.countries" 
+                :key="index" 
+                v-bind:value="country">
+                {{country}}
+            </option>
         </select>
     </div>
 </template>
@@ -15,10 +20,13 @@ export default {
             change: false,
         }
     },
+    async created(){
+        
+    },
     methods: {
         changeCountry(){
             this.change = true;
-            this.$store.state.datacollection  = {};
+            this.$store.state.datacollection  = {};            
             this.$store.commit('load');
             //this.$store.commit('fillData');
         }

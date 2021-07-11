@@ -101,8 +101,8 @@
                     
                 </div>
             </div>
-            <br> 
-            <div class="row" style="margin-bottom: 2em">
+
+            <div class="row" style="margin-bottom: 2.5em">
                 <div class="col-12">
                     <CardHorizontal></CardHorizontal>  
                 </div>  
